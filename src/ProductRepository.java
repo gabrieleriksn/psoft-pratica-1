@@ -11,7 +11,8 @@ public class ProductRepository {
 
     public void addProduct(String name, String manufacturer, double price) {
         Product product = new Product(name, manufacturer, price);
-        int id = product.getId();
+        int id = product.hashCode();
+        product.setId(id);
         this.products.put(id, product);
     }
 }
